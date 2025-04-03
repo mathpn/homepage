@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ description }}">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    {% if stylesheet %}
+    <link rel="stylesheet" href="{{ stylesheet }}">
+    {% endif %}
+</head>
+<body>
+    <header class="site-header">
+        <nav class="main-nav">
+            <div class="nav-brand">
+                <a href="/">{{ site.title }}</a>
+            </div>
+            <ul class="nav-links">
+                {%- for entry in collections.all | eleventyNavigation %}
+                <li class="nav-item{% if entry.url == page.url %} active{% endif %}">
+                    <a href="{{ entry.url }}">{{ entry.title }}</a>
+                </li>
+                {%- endfor %}
+            </ul>
+        </nav>
+    </header>
+
+    <main class="site-main">
+        {{ content | safe }}
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="social-links">
+                {% if site.social.twitter %}
+                <a href="https://twitter.com/{{ site.social.twitter }}" rel="me">Twitter</a>
+                {% endif %}
+                {% if site.social.bluesky %}
+                <a href="https://bsky.app/profile/{{ site.social.bluesky }}" rel="me">Bluesky</a>
+                {% endif %}
+                {% if site.social.github %}
+                <a href="https://github.com/{{ site.social.github }}" rel="me">GitHub</a>
+                {% endif %}
+            </div>
+            <p class="copyright">&copy; {{ site.year }} {{ site.title }}. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+    {% if script %}
+    <script src="{{ script }}"></script>
+    {% endif %}
+</body>
+</html> 

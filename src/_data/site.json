@@ -1,0 +1,12 @@
+{
+    "title": "My Personal Website",
+    "description": "A personal website built with Eleventy and Python-based social media syndication",
+    "url": "https://example.com",
+    "author": "Your Name",
+    "year": 2024,
+    "social": {
+        "twitter": "your_twitter_handle",
+        "bluesky": "your_bluesky_handle",
+        "github": "your_github_username"
+    }
+} 
