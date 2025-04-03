@@ -1,0 +1,57 @@
+/* Post styles */
+.post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.post-header {
+    margin-bottom: 2rem;
+}
+
+.post-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.post-description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.post-tags {
+    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: #f0f0f0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.post-meta {
+    margin-top: 2rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Short post specific styles */
+.short-post {
+    max-width: 600px;
+}
+
+.short-post .post-content {
+    font-size: 1.2rem;
+    line-height: 1.5;
+} 

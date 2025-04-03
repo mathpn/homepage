@@ -30,6 +30,19 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
+  // Add date filters
+  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+    return new Date(dateObj).toISOString().split('T')[0];
+  });
+
+  eleventyConfig.addFilter("readableDate", (dateObj) => {
+    return new Date(dateObj).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  });
+
   // Configure markdown
   let markdownLibrary = markdownIt({
     html: true,
