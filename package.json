@@ -22,6 +22,7 @@
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^6.0.1",
     "@11ty/eleventy-navigation": "^1.0.4",
+    "highlight.js": "^11.11.1",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0"
   },
@@ -29,4 +30,4 @@
     "eslint": "^9.23.0",
     "prettier": "^3.5.3"
   }
-} 
+}

@@ -9,7 +9,7 @@ layout: base.njk
         <p class="post-description">{{ description }}</p>
         {% endif %}
     </header>
-    <div class="post-content">
+    <div class="post-content markdown-content">
         {{ content | safe }}
     </div>
     {% if tags %}

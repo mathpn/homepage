@@ -2,6 +2,7 @@ const Image = require("@11ty/eleventy-img");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const navigationPlugin = require("@11ty/eleventy-navigation");
+const hljs = require("highlight.js");
 
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(src, {
@@ -47,8 +48,22 @@ module.exports = function (eleventyConfig) {
   let markdownLibrary = markdownIt({
     html: true,
     breaks: true,
-    linkify: true
-  }).use(markdownItAnchor);
+    linkify: true,
+    typographer: true,
+    quotes: ["\"\"", "''"],
+    highlight: function (str, lang) {
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return hljs.highlight(str, { language: lang }).value;
+        } catch (__) { }
+      }
+      return ''; // use external default escaping
+    }
+  }).use(markdownItAnchor, {
+    permalink: true,
+    permalinkBefore: true,
+    permalinkSymbol: '§'
+  });
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
