@@ -27,6 +27,7 @@ pagination:
     <article class="post-full">
       <time datetime="{{ post.date | htmlDateString }}">{{ post.date | formatDate }}</time>
       {{ post.templateContent | safe }}
+      <a href="{{ post.url }}" class="permalink">Permalink →</a>
     </article>
   {% endif %}
 {% endfor %}
@@ -61,7 +62,8 @@ pagination:
     margin: 0.5rem 0;
   }
   
-  .read-more {
+  .read-more,
+  .permalink {
     display: inline-block;
     margin-top: 0.5rem;
     color: #0066cc;
